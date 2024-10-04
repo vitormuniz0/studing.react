@@ -1,8 +1,11 @@
 import React from 'react'
+import {ButtonContainer} from './styles'
 
-const Button = ({title}) => {
+const Button = ({label, onclick}) => {
   return (
-    <button>{title}</button>
+    <ButtonContainer onClick={onclick}>
+      {label}
+    </ButtonContainer>
   )
 }
 
