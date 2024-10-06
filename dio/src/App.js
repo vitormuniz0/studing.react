@@ -41,6 +41,8 @@ const App = () => {
     }
   }
 
+  
+
   const handleMultiplicationNumbers = () => {
     if(firstNumber === '0'){
       setFirstNumber(String(currentNumber));
@@ -60,6 +62,13 @@ const App = () => {
     }else {
       const division = Number(firstNumber) / Number(currentNumber);
       setCurrentNumber(String(division));
+    }
+  }
+  const handleRemove = () => {
+    if(currentNumber.length > 1){
+      setCurrentNumber(currentNumber.slice(0, -1));
+    } else{
+      setCurrentNumber('0')
     }
   }
 
@@ -94,7 +103,7 @@ const App = () => {
             <Button label="*" onclick={handleMultiplicationNumbers} />
             <Button label="/" onclick={handleDivisionNumbers}/>
             <Button label="C" onclick={handleOnClear}/>
-            <Button label="X" />
+            <Button label="<" onclick={handleRemove} />
           </Row>
           <Row>
             <Button label="7" onclick={() => handleAddNumber('7')}/>
